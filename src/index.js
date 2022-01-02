@@ -8,8 +8,6 @@ import { store } from './store';
 
 import './index.css';
 
-console.log(store.getState());
-
 ReactDOM.render(
   <Provider store={store}>
     <Theme.Provider theme="default">
