@@ -1,3 +1,5 @@
+import { ITEM_ADDED } from './actions';
+
 let id = 1;
 
 export const initialItems = [
@@ -6,6 +8,11 @@ export const initialItems = [
 ];
 
 export const reducer = (state = initialItems, action) => {
+  if (action.type === ITEM_ADDED) {
+    let item = { uuid: id++, quantity: 1, ...action.payload };
+    return [...state, item];
+  }
+
   return state;
 };
 
